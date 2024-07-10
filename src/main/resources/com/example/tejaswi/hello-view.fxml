@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane prefHeight="557.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tejaswi.HelloController">
+    <top>
+        <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Get Your Pizza Here" />
+    </top>
+   <left>
+        <!-- Input fields -->
+        <GridPane hgap="10" prefHeight="494.0" prefWidth="690.0" vgap="10" BorderPane.alignment="CENTER">
+            <Label text="customer" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="customerNameField" GridPane.columnIndex="1" />
+
+            <Label text="mobile" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="mobileNumberField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         <TextField fx:id="mobileNumberField1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="69.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+            <Label text="size" GridPane.rowIndex="3" />
+            <!-- Add checkboxes for L, M, S sizes similarly -->
+
+            <Label text="toppings" GridPane.rowIndex="7" />
+            <TextField fx:id="toppingsField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+            <!-- Buttons for CRUD operations -->
+            <HBox spacing="10" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                <Button onAction="#addPizzaOrder" text="Add" />
+                <Button onAction="#updatePizzaOrder" text="Update" />
+                <Button onAction="#deletePizzaOrder" text="Delete" />
+                <Button onAction="#clearFields" text="Clear" />
+            </HBox>
+
+            <!-- Table View to display pizza orders -->
+            <TableView fx:id="pizzaOrdersTable" prefHeight="294.0" prefWidth="754.0" GridPane.rowIndex="9">
+                <columns>
+                    <TableColumn prefWidth="57.60000455379486" text="id" />
+                    <TableColumn prefWidth="115.19998931884766" text="customer" />
+                    <TableColumn prefWidth="116.0" text="mobile" />
+                    <TableColumn prefWidth="59.20001220703125" text="size" />
+                    <TableColumn minWidth="0.0" prefWidth="99.20001220703125" text="toppings" />
+                    <TableColumn prefWidth="150.40000610351558" text="total bill" />
+                </columns>
+            </TableView>
+            <columnConstraints>
+                <ColumnConstraints maxWidth="669.2" minWidth="564.8000244140625" prefWidth="600.0000244140625" />
+                <ColumnConstraints maxWidth="105.5999755859375" minWidth="0.0" prefWidth="69.19997558593752" />
+                <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints maxHeight="26.4" minHeight="3.199990844726564" prefHeight="26.4" />
+                <RowConstraints maxHeight="22.400009155273438" minHeight="0.0" prefHeight="0.0" />
+                <RowConstraints maxHeight="26.400000000000006" minHeight="26.400000000000006" prefHeight="26.400000000000006" />
+                <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                <RowConstraints maxHeight="25.599999999999994" minHeight="25.599999999999994" prefHeight="25.599999999999994" />
+                <RowConstraints />
+            <RowConstraints />
+            </rowConstraints>
+        </GridPane>
+   </left>
+</BorderPane>
